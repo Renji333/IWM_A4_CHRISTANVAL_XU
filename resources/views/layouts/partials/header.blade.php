@@ -35,7 +35,6 @@
 
             <ul class="nav navbar-nav">
                 <li class=""><a href="{{ route('index') }}">Les mangas</a></li>
-                <li><a href="#">Top Mangas</a></li>
             </ul>
 
 
