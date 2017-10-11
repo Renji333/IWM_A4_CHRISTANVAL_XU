@@ -8354,3 +8354,11 @@ button.close {
   border-radius: 0px !important;
 }
 
+.Sidebar {
+  background-color: darkred;
+}
+
+.MainContent {
+  background-color: #1b6d85;
+}
+

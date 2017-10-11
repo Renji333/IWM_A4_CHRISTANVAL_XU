@@ -28,13 +28,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Manga-K</a>
+            <a class="navbar-brand" href="{{ route('index') }}">Manga-K</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
             <ul class="nav navbar-nav">
-                <li class=""><a href="#">Les mangas</a></li>
+                <li class=""><a href="{{ route('index') }}">Les mangas</a></li>
                 <li><a href="#">Top Mangas</a></li>
             </ul>
 
@@ -67,26 +67,26 @@
                         @endguest
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chapitres <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                    </ul>
-                </li>
-            </ul>
-
-
+            @if(Request::url() === '/' or Request::url() === '/home')
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chapitres <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @foreach ($mangas as $manga)
+                                <li><a href="/manga/{{ $manga }}">{{ $manga }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @foreach ($mangas as $manga)
+                                <li><a href="/manga/{{ $manga }}">{{ $manga }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                </ul>
+            @endif
 
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
     @include('layouts.partials.header')
-    @yield('content')
-    @yield('sidebar')
+    <div class="container-fluid">
+        @yield('content')
+        @include('layouts.partials.sidebar')
+    </div>
     @include('layouts.partials.footer')
 </html>
