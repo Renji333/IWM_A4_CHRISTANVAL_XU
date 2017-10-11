@@ -1,9 +1,7 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    @include('layouts.app.header')
-    <body>
+<html>
+        @include('layouts.app.header')
         @yield('content')
-        @yield('sideBar')
+        @yield('sidebar')
         @include('layouts.app.footer')
-    </body>
 </html>
