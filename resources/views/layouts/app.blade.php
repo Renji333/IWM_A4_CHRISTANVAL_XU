@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
-        @include('layouts.app.header')
+        @include('layouts.partials.header')
         @yield('content')
         @yield('sidebar')
-        @include('layouts.app.footer')
+        @include('layouts.partials.footer')
 </html>
