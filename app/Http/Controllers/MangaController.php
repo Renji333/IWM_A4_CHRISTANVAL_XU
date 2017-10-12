@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\manga;
 use Illuminate\Http\Request;
 
 class MangaController extends Controller
@@ -48,9 +49,12 @@ class MangaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
-
+        $manga = manga::find($id);
+        $manga->pageCurrent = 0;
+        return view('show',compact('manga'));
     }
 
     /**
