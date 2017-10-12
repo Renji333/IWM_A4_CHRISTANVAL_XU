@@ -15,16 +15,7 @@ class ScanServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        $url = 'http://lelscanz.me/mangas/';
-        $content = file_get_contents($url);
-        $mangas = [];
-        $re = '/a href="(.*?)">(.*?)\/</mi';
-        preg_match_all($re, $content, $matches, PREG_SET_ORDER, 0);
-
-        foreach ($matches as $manga){
-            $mangas[] = str_replace('-'," ",$manga[2]);
-        }
-
+        $mangas = ['bleach','naruto','boruto','dbs','gantz','gintama','hxh','onepiece'];
         View::share('mangas', $mangas);
 
     }

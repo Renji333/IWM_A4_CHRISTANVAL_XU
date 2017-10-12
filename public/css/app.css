@@ -8354,8 +8354,14 @@ button.close {
   border-radius: 0px !important;
 }
 
+.marginBottom {
+  margin-bottom: 10px;
+}
+
 .Sidebar {
-  background-color: darkred;
+  background-color: #2a2a2a;
+  padding: 7px;
+  border-radius: 4px;
 }
 
 .MainContent {
