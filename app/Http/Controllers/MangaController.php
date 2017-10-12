@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\comment;
+use App\Comments;
 use App\manga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -63,7 +65,9 @@ class MangaController extends Controller
         $manga->pageCurrent = 0;
         $manga->pageCurrentDisplayed = '00';
 
-        return view('show',compact('manga'));
+        $allComments = comment::all()->where('manga_id', '=', $id);
+
+        return view('show',compact(['manga', 'allComments']));
     }
 
     /**
