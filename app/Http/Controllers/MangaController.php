@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\manga;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MangaController extends Controller
 {
@@ -53,7 +54,10 @@ class MangaController extends Controller
     public function show($id)
     {
         $manga = manga::find($id);
+        $manga->tomeCurrent = DB::table('tomes')->select('chapter')->where('manga_id', '=', $id)->max('chapter');
         $manga->pageCurrent = 0;
+        $manga->pageCurrentDisplayed = '00';
+
         return view('show',compact('manga'));
     }
 
