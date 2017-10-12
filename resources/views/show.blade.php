@@ -12,7 +12,7 @@
 
             </div>
         </div>
-        @include('layouts.comments)
+        @include('layouts.partials.comments')
     </div>
 @endsection
 
