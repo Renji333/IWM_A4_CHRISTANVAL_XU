@@ -26,6 +26,11 @@ class MangaController extends Controller
         //
     }
 
+    public function createComments()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -45,7 +50,7 @@ class MangaController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

@@ -2,12 +2,12 @@
     @foreach ($mangas as $manga)
 
         <div class="row marginBottom">
-            <a href="/manga/{{ $manga }}">
+            <a href="/mangas/{{ $manga->id }}">
                 <div class="col-lg-3">
-                    <img src="{{asset('mangas/'.$manga.'/thumb_cover.jpg')}}" alt="{{ $manga }}" class="img-thumbnail"/>
+                    <img src="{{asset('mangas/'.$manga->shortTitle.'/thumb_cover.jpg')}}" alt="{{ $manga->title }}" class="img-thumbnail"/>
                 </div>
                 <div class="col-lg-9">
-                    <h4>{{ $manga }}</h4>
+                    <h4>{{ $manga->title }}</h4>
                 </div>
             </a>
         </div>

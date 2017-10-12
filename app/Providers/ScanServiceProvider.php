@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -15,7 +16,7 @@ class ScanServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        $mangas = ['bleach','naruto','boruto','dbs','gantz','gintama','hxh','onepiece'];
+        $mangas = DB::table('mangas')->get();
         View::share('mangas', $mangas);
 
     }

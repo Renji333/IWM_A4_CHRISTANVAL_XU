@@ -9,3 +9,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('mangas', 'MangaController');
+
+Route::post('/createComments', 'MangaController@createComments')->name('cc');
