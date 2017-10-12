@@ -12,11 +12,7 @@
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-
-            </div>
-        </div>
+        @include('layouts.comments)
     </div>
 @endsection
 
