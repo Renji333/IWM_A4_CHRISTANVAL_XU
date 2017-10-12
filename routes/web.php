@@ -9,3 +9,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('mangas','MangaController');
+Route::resource('commentaire', 'CommentController');
