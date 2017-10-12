@@ -44,6 +44,11 @@ class MangaController extends Controller
         //
     }
 
+    public function storeComments(Request $request)
+    {
+        //
+    }
+
     /**
      * Display the specified resource.
      *
