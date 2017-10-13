@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\comment;
 use App\Comments;
 use App\manga;
+use App\tome;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -61,7 +62,7 @@ class MangaController extends Controller
     public function show($id)
     {
         $manga = manga::find($id);
-        $manga->tomeCurrent = DB::table('tomes')->select('chapter')->where('manga_id', '=', $id)->max('chapter');
+        $manga->tomeCurrent = tome::select(['nbPages','chapter'])->where('manga_id', '=', $id)->orderBy('chapter', 'DESC')->first();
         $manga->pageCurrent = 0;
         $manga->pageCurrentDisplayed = '00';
 
