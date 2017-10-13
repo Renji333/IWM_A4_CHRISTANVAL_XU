@@ -51,14 +51,22 @@ class MangaController extends Controller
     public function storeComment(Request $request, $id)
     {
         //
+        $this->validate($request,
+            [
+                'comment' => 'required',
+            ],
+            [
+                'comment.require' => 'Veuillez ajouter un commentaire pour le poster',
+            ]
+        );
         comment::create(
             [
                 'user_id' => Auth::user()->id,
                 'manga_id' => $id,
                 'comment' => $request->comment,
-
             ]
         );
+        return redirect()->route('home');
     }
 
     /**
