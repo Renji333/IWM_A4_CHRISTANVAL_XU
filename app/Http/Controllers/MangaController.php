@@ -6,7 +6,6 @@ use App\comment;
 use App\Comments;
 use App\manga;
 use App\tome;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -52,7 +51,14 @@ class MangaController extends Controller
     public function storeComment(Request $request, $id)
     {
         //
+        comment::create(
+            [
+                'user_id' => Auth::user()->id,
+                'manga_id' => $id,
+                'comment' => $request->comment,
 
+            ]
+        );
     }
 
     /**

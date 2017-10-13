@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->integer('manga_id')->unsigned();
             $table->foreign('manga_id')->references('id')->on('mangas');
             $table->text('comment');
-            $table->date('created_at');
+            $table->timestamps();
         });
     }
 

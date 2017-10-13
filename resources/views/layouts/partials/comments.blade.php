@@ -12,7 +12,7 @@
         @forelse($allComments as $allComment)
             <div class="comments-list">
                 <div class="media">
-                    <p class="pull-right"><small>{{$allComment->created_at}}</small></p>
+                    <p class="pull-right"><small>{{date('d-m-Y', strtotime($allComment->created_at))}}</small></p>
                     <div class="media-body">
                         <h4 class="media-heading">
                             {{$allComment->user->name}}
