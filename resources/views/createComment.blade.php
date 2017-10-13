@@ -14,7 +14,7 @@
     <div class="col-lg-9 MainContent">
         <form action="{{route('cc_store', 4)}}" method="post">
             {{csrf_field()}}
-            <textarea name="comment" id="" cols="30" rows="10"></textarea>
+            <textarea name="comment" id="" cols="100" rows="5"></textarea>
             <br>
             <input type="submit" value="Envoyer" class="btn btn-default"> &nbsp;&nbsp;
             <a class="btn btn-default btn-close" href="{{ route('home') }}">Cancel</a>
