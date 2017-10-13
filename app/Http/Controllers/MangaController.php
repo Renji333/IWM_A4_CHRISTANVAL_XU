@@ -31,7 +31,7 @@ class MangaController extends Controller
         //
     }
 
-    public function createComment($id)
+    public function createComment()
     {
         //
         return view('createComment');
