@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\manga;
+use App\tome;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;

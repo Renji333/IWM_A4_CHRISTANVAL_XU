@@ -66,6 +66,19 @@
                         @endguest
             </ul>
 
+            @if(Route::current()->getName() == 'SwP' or Route::current()->getName() == 'mangas.show')
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chapitres <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @foreach ($mangaTomes as $mangaT)
+                                <li><a href="{!! route('SwP', ['id'=> $id, 'pages'=> 0, 'chapter'=> $mangaT->chapter])  !!}">{{ $mangaT->chapter }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                </ul>
+            @endif
+
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>

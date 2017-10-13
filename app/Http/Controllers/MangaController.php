@@ -68,7 +68,9 @@ class MangaController extends Controller
 
         $allComments = comment::all()->where('manga_id', '=', $id);
 
-        return view('show',compact(['id','manga', 'allComments']));
+        $mangaTomes = tome::all()->where('manga_id', '=', $id);
+
+        return view('show',compact(['id','manga', 'allComments','mangaTomes']));
     }
 
     public function showWithPage($id,$chapter,$pages)
@@ -84,8 +86,9 @@ class MangaController extends Controller
         $manga->pageCurrentDisplayed = $pages;
 
         $allComments = comment::all()->where('manga_id', '=', $id);
+        $mangaTomes = tome::all()->where('manga_id', '=', $id);
 
-        return view('show',compact(['id','manga', 'allComments']));
+        return view('show',compact(['id','manga', 'allComments','mangaTomes']));
     }
 
     /**
