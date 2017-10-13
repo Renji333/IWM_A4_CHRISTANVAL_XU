@@ -76,7 +76,7 @@ class MangaController extends Controller
         if($pages < 10){
             $pages = '0'.$pages;
         }
-        
+
         $manga = manga::find($id);
         $manga->tomeCurrent = tome::select('nbPages')->where('manga_id', '=', $id)->where('chapter', '=', $chapter)->first();
         $manga->tomeCurrent->chapter = $chapter;
