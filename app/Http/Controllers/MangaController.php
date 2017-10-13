@@ -6,8 +6,9 @@ use App\comment;
 use App\Comments;
 use App\manga;
 use App\tome;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class MangaController extends Controller
 {
@@ -48,9 +49,10 @@ class MangaController extends Controller
         //
     }
 
-    public function storeComment(Request $request)
+    public function storeComment(Request $request, $id)
     {
         //
+
     }
 
     /**

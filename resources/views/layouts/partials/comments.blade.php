@@ -1,18 +1,18 @@
 <div class="row">
     <div class="col-lg-12">
-        <button type="button" onclick="window.location='{{ url("/createComment/".$id) }}'">Ajouter un commentaire</button>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-12">
         <div class="page-header">
             <h1>Commentaires</h1>
-        </div>
 
+            @if(Auth::check())
+                <button type="button" onclick="window.location='{{ url("/createComment/".$id) }}'">Ajouter un commentaire</button>
+            @else
+                <h5>Connectez-vous pour poster un commentaire</h5>
+            @endif
+        </div>
         @forelse($allComments as $allComment)
             <div class="comments-list">
                 <div class="media">
-                    <p class="pull-right"><small>5 days ago</small></p>
+                    <p class="pull-right"><small>{{$allComment->created_at}}</small></p>
                     <div class="media-body">
                         <h4 class="media-heading">
                             {{$allComment->user->name}}

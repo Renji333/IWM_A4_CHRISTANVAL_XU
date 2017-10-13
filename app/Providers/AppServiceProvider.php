@@ -20,8 +20,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        $mangas = DB::table('mangas')->get();
-        View::share('mangasC', $mangas);
+
+        if(Schema::hasTable('mangas')) {
+            $mangas = DB::table('mangas')->get();
+            View::share('mangasC', $mangas);
+        }
+
     }
 
     /**
