@@ -68,7 +68,24 @@ class MangaController extends Controller
 
         $allComments = comment::all()->where('manga_id', '=', $id);
 
-        return view('show',compact(['manga', 'allComments']));
+        return view('show',compact(['id','manga', 'allComments']));
+    }
+
+    public function showWithPage($id,$chapter,$pages)
+    {
+        if($pages < 10){
+            $pages = '0'.$pages;
+        }
+        
+        $manga = manga::find($id);
+        $manga->tomeCurrent = tome::select('nbPages')->where('manga_id', '=', $id)->where('chapter', '=', $chapter)->first();
+        $manga->tomeCurrent->chapter = $chapter;
+        $manga->pageCurrent = 0;
+        $manga->pageCurrentDisplayed = $pages;
+
+        $allComments = comment::all()->where('manga_id', '=', $id);
+
+        return view('show',compact(['id','manga', 'allComments']));
     }
 
     /**

@@ -1,5 +1,5 @@
 <div class="col-lg-3 Sidebar">
-    @foreach ($mangas as $manga)
+    @foreach ($mangasC as $manga)
 
         <div class="row marginBottom">
             <a href="/mangas/{{ $manga->id }}">

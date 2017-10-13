@@ -13,7 +13,7 @@
                     <ul class="pagination">
                         @for($i = 0; $i < $manga->tomeCurrent->nbPages; $i++ )
                             <li>
-                                <a href="{{$manga->tomeCurrent->chapter}}/@if($i < 10){{ '0'.$i }}@else{{ $i }}@endif">{{ $i }}</a>
+                                <a href="{!! route('SwP', ['id'=> $id, 'pages'=> $i, 'chapter'=> $manga->tomeCurrent->chapter])  !!}">{{ $i }}</a>
                             </li>
                         @endfor
                     </ul>

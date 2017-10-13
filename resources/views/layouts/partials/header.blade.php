@@ -66,27 +66,6 @@
                         @endguest
             </ul>
 
-            @if(Request::url() === '/' or Request::url() === '/home')
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chapitres <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            @foreach ($mangas as $manga)
-                                <li><a href="/manga/{{ $manga }}">{{ $manga }}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            @foreach ($mangas as $manga)
-                                <li><a href="/manga/{{ $manga }}">{{ $manga }}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
-                </ul>
-            @endif
-
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
