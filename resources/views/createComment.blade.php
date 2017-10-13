@@ -16,7 +16,8 @@
             {{csrf_field()}}
             <textarea name="comment" id="" cols="30" rows="10"></textarea>
             <br>
-            <input type="submit" value="Envoyer">
+            <input type="submit" value="Envoyer" class="btn btn-default"> &nbsp;&nbsp;
+            <a class="btn btn-default btn-close" href="{{ route('home') }}">Cancel</a>
         </form>
     </div>
 @endsection
