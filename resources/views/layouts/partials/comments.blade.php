@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <button type="button" onclick="window.location='{{ url("mangas") }}'">Ajouter un commentaire</button>
+        <button type="button" onclick="window.location='{{ url("/createComment/".$id) }}'">Ajouter un commentaire</button>
     </div>
 </div>
 <div class="row">

@@ -31,9 +31,10 @@ class MangaController extends Controller
         //
     }
 
-    public function createComments()
+    public function createComment($id)
     {
         //
+        return view('createComment');
     }
 
     /**
@@ -47,7 +48,7 @@ class MangaController extends Controller
         //
     }
 
-    public function storeComments(Request $request)
+    public function storeComment(Request $request)
     {
         //
     }
