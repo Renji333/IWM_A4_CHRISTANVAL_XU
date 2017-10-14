@@ -8364,10 +8364,6 @@ button.close {
   border-radius: 4px;
 }
 
-.MainContent {
-  border: 1px #1b6d85 solid;
-}
-
 .media {
   border-bottom: 1px;
 }
@@ -8378,5 +8374,6 @@ img {
 
 .PagesActive {
   background-color: #2a88bd;
+  color: white;
 }
 
