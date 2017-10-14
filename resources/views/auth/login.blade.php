@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <div class="col-lg-9">
+        <div class="col-lg-9 ContainerMg">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
 

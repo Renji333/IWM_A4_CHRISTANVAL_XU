@@ -8368,7 +8368,8 @@ button.close {
   margin-top: 65px;
 }
 
-.MainContent {
+.MainContent,
+.ContainerMg {
   margin-top: 65px;
 }
 
