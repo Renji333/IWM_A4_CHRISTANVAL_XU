@@ -31,10 +31,10 @@ class MangaController extends Controller
         //
     }
 
-    public function createComment()
+    public function createComment($id)
     {
-        //
-        return view('createComment');
+
+        return view('createComment',compact('id'));
     }
 
     /**
@@ -48,9 +48,8 @@ class MangaController extends Controller
         //
     }
 
-    public function storeComment(Request $request, $id)
+    public function storeComment(Request $request)
     {
-        //
         $this->validate($request,
             [
                 'comment' => 'required',
@@ -62,7 +61,7 @@ class MangaController extends Controller
         comment::create(
             [
                 'user_id' => Auth::user()->id,
-                'manga_id' => $id,
+                'manga_id' => $request->idManga,
                 'comment' => $request->comment,
             ]
         );

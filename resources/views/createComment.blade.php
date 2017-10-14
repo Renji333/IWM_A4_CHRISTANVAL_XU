@@ -14,6 +14,7 @@
     <div class="col-lg-9 MainContent">
         <form action="{{route('cc_store', 4)}}" method="post">
             {{csrf_field()}}
+            <input type="hidden" name="idManga" value="{{$id}}"/>
             <textarea name="comment" id="" cols="100" rows="5"></textarea>
             <br>
             <input type="submit" value="Envoyer" class="btn btn-default"> &nbsp;&nbsp;
