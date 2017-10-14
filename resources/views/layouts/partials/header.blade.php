@@ -77,6 +77,18 @@
                         </ul>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @for($i = 0; $i < $manga->tomeCurrent->nbPages; $i++ )
+                                <li>
+                                    <a class="{{ $i == $manga->pageCurrent ? 'PagesActive' : 'Pages' }}" href="{!! route('SwP', ['id'=> $id, 'pages'=> $i, 'chapter'=> $manga->tomeCurrent->chapter])  !!}">{{ $i }}</a>
+                                </li>
+                            @endfor
+                        </ul>
+                    </li>
+                </ul>
             @endif
 
         </div><!-- /.navbar-collapse -->
