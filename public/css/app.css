@@ -8352,6 +8352,9 @@ button.close {
 
 .navbar {
   border-radius: 0px !important;
+  position: fixed;
+  z-index: 40;
+  width: 100%;
 }
 
 .marginBottom {
@@ -8362,6 +8365,11 @@ button.close {
   background-color: #2a2a2a;
   padding: 7px;
   border-radius: 4px;
+  margin-top: 65px;
+}
+
+.MainContent {
+  margin-top: 65px;
 }
 
 .media {
