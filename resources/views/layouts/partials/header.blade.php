@@ -78,7 +78,7 @@
                     </li>
                 </ul>
             
-                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')" class="nav navbar-nav navbar-right SelectPage">
+                <select onchange="window.open(this.options[this.selectedIndex].getAttribute('href'),'_top')" class="nav navbar-nav navbar-right SelectPage">
                     @for($i = 0; $i < $manga->tomeCurrent->nbPages; $i++ )
                         <option {{ $i == $manga->pageCurrent ? 'selected' : '' }} href="{!! route('SwP', ['id'=> $id, 'pages'=> $i, 'chapter'=> $manga->tomeCurrent->chapter])  !!}">
                             {{ $i }}
