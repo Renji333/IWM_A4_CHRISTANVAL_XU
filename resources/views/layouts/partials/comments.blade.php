@@ -1,5 +1,5 @@
-<div class="row">
-    <div class="col-lg-12">
+<div class="row ">
+    <div class="col-lg-12 BgWhite">
         <div class="page-header">
             <h1>Commentaires</h1>
 

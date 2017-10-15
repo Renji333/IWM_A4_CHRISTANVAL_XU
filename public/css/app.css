@@ -8390,3 +8390,18 @@ img {
   margin-top: 16px;
 }
 
+.bg {
+  background-image: url("/img/background.png");
+}
+
+.MainContent {
+  padding-top: 15px;
+  background-color: white;
+}
+
+.imgMain {
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 12px #555;
+          box-shadow: 1px 1px 12px #555;
+}
+
